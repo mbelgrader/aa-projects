@@ -1,0 +1,6 @@
+dog
+cat
+computer
+telephone
+mug
+cup
