@@ -8,6 +8,7 @@
 #  population  :integer
 #  gdp         :integer
 
+# 6:35
 require_relative './sqlzoo.rb'
 
 def example_select
@@ -37,7 +38,7 @@ def per_capita_gdp
   # the area is over 5,000,000 km^2
   execute(<<-SQL)
     SELECT
-      name, gdp/population
+        name, gdp/population
     FROM
       countries
     WHERE
@@ -89,7 +90,7 @@ def just_the_right_size
   # BETWEEN allows range checking - note that it is inclusive.
   execute(<<-SQL)
     SELECT
-      name, area / 1000
+      name, area/1000
     FROM
       countries
     WHERE

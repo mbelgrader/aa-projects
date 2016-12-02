@@ -53,7 +53,7 @@ def population_in_millions
   # millions.
   execute(<<-SQL)
     SELECT
-      name, population / 1000000
+      name, population/1000000
     FROM
       countries
     WHERE
@@ -70,7 +70,6 @@ def name_and_population
       countries
     WHERE
       name IN ('France', 'Germany', 'Italy')
-
   SQL
 end
 
