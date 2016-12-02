@@ -42,6 +42,7 @@ def films_from_sixty_two
       movies
     WHERE
       yr = 1962
+
   SQL
 end
 
@@ -68,7 +69,8 @@ def trek_films
       movies
     WHERE
       title LIKE '%Star Trek%'
-    ORDER BY yr
+    ORDER BY
+      yr
   SQL
 end
 
@@ -115,11 +117,11 @@ def casablanca_cast
     SELECT
       actors.name
     FROM
-      castings
-    INNER JOIN actors
-      ON castings.actor_id = actors.id
+      actors
+    JOIN
+      castings ON castings.actor_id = actors.id
     WHERE
-      movie_id = 27
+      castings.movie_id = 27
   SQL
 end
 
@@ -129,11 +131,11 @@ def alien_cast
     SELECT
       actors.name
     FROM
-      castings
-    INNER JOIN
-      actors ON castings.actor_id = actors.id
-    INNER JOIN
-      movies ON movies.id = castings.movie_id
+      actors
+    JOIN
+      castings ON castings.actor_id = actors.id
+    JOIN
+      movies ON castings.movie_id = movies.id
     WHERE
       movies.title = 'Alien'
   SQL
